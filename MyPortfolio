@@ -1,9 +1,80 @@
-<html>
- 
-<body>
-  <h1>YOUR NAME</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIRASHIKI RAFAEL</title>
+    <link rel="stylesheet" href="./index_portfolio.css"
+  </head>
+
+  <nav class="navbar">
+    <ul>
+      <li> <a id="azure" href="home"> Home </a> </li>
+      <li> <a href="portfolio"> Portfolio </a> </li>
+      <li> <a href="contact"> Contact </a> </li>
+    </ul>
+  </nav>
+
+<main>
+    <section id="topbanner">
+        <h1>HIRASHIKI RAFAEL HAJIME</h1>
+        <h3>Current level: Junior Web Developer </h3>
+        <p>
+            Rafael is a Junior self-taught front-end developer.
+            Currently HTML, CSS, Javascript
+        </p>
+        <button>Click here to know more about him.</button>
+    </section>
+
+    <figure>
+      <img src="./resources/i_shoes.jpg" alt="new shoes" id="i_shoes" />
+      <figcaption> This is Rafael wearing his new shoes. </figcaption>
+    </figure>
+
+    <div id="skillsplan">
+      <span> Skill Development RoadMap </span>
+      <ol>
+        <li> <label for="html">HTML/CSS</label></li>   
+            <input type="checkbox" class="checkbox" name="basics" value="html" checked>
+        <li> Javascript </li>
+            <input type="checkbox" class="checkbox" name="basics" value="javascript">
+        <li> CSS Frameworks: SASS, BOOTRAP, TAILWIND </li>
+        <li> Javascript Frameworks: React and Next.JS </li>
+        <li> Dev. Tools </li>
+        <li> Typescript </li>
+      </ol>
+    </div>
+
+    <section>
+      <article>
+        <h2 class="bold"> The Scenery in NYC </h2>
+        <p>
+        While the view in the city is beautiful, the sounds are not as lovely. Below you'll see an example of the view and the sounds you'll deal with in NYC on a daily basis.
+        </p>  
+      </article>
+
+      <video src="https://content.codecademy.com/courses/Semantic%20HTML/nyc-skyline-timelapse.mp4" controls> </video>
+
+      <embed src="https://content.codecademy.com/courses/Semantic%20HTML/nyc-skyline.jpeg"/> 
+
+      <audio controls>
+        <source src="https://content.codecademy.com/courses/Semantic%20HTML/nyc-sounds.mov" type="audio/mov">
+      </audio>
+
+    </section>
+</main>
+
+    <footer>
+        <p class="bold">
+         Posted by: Rafael
+        </p>
+        <p class="bold">
+          Contact information: Blogger@NYC.com
+        </p>
+    </footer>
+   
+  </body>
 </html>
+
+<!-- C:\Users\rafae\OneDrive\Área de Trabalho\Programming\Projects\1st_Project\index_portfolio.html -->
