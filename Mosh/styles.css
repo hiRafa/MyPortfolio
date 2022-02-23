@@ -90,3 +90,34 @@ a {
         font-size: 1.7rem;
     }
 }
+
+/* ------------------------------------------------------------- */
+/* BADGES */
+
+.badge {
+    border-radius: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    white-space: nowrap; /* this prevents badges from wrapping to second line making the text always appear in a single line */
+}
+
+.badge--primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.badge--secondary {
+    background: var(--color-secondary);
+    color: white;
+}
+
+.badge--small {
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .badge {
+        font-size: 1.4rem;
+    }
+}
