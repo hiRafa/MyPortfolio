@@ -4,6 +4,8 @@
     --color-accent: #ff3400;
     --color-headings: #1b0760;
     --color-body: #918ca4;
+    --color-border: #ccc;
+    --border-radius: 30px;
 }
 
 *, *::after, *::before {
@@ -178,6 +180,8 @@ a {
     align-items: center; /* vertical axis */
 }
 
+/* ------------------------------------------------------------- */
+/* BUTTONS */
 .button {
     border-radius: 50px;
     border: none;
@@ -237,4 +241,77 @@ a {
     .button {
         font-size: 1.5rem;
     }
+}
+
+/* ------------------------------------------------------------- */
+/* INPUTS */
+.input {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    color: var(--color-headings);
+    font-size: 2rem;
+    outline: 0; /* chrome adds outline automatically, setting it to 0 mkes it disappear */
+    padding: 1.5rem 3.5rem;
+}
+
+::placeholder {
+    color: #cdcbd7;
+}
+
+.input-group {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    margin: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.input-group .input { /* this model is like an if statement (if input is inside of an input-group, border is 0) */
+    border: 0;
+    flex-grow: 1;
+    padding: 1.5rem 1rem;
+}
+
+.input-group .button { /* styling only buttons inside input-group */
+    margin: 4px;
+    width: 160px;
+    overflow: visible;
+}
+
+.input-group .icon-container {
+   align-self: center;
+   justify-self: center;
+   width: 40px;
+   height: 40px;
+   margin: 20px;
+}
+
+@media screen and (min-width: 1024px){
+    .input {
+        font-size: 1.5rem;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* CARDS */
+.card {
+    border-radius: 7px;
+    box-shadow: 0 0 20px 10px #f3f3f3;
+    overflow:hidden;
+}
+
+.card__header, .card__body {
+    padding: 2rem 3rem;
+}
+
+.card--primary .card__header {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.card--secondary .card__header {
+    background-color: var(--color-secondary);
+    color: white;
 }
