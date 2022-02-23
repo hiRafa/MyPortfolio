@@ -4,6 +4,7 @@
     --color-accent: #ff3400;
     --color-headings: #1b0760;
     --color-body: #918ca4;
+    --color-body-darker: #5c5577;
     --color-border: #ccc;
     --border-radius: 30px;
 }
@@ -120,6 +121,7 @@ a {
 
 .badge--small {
     font-size: 1.6rem;
+    padding: 0.5rem 1.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -166,8 +168,17 @@ a {
     height: 40px;
 }
 
+.icon--small {
+    width: 30px;
+    height: 30px;
+}
+
 .icon--primary {
     fill: var(--color-primary);
+}
+
+.icon--white {
+    fill: #fff;
 }
 
 .icon-container {
@@ -178,6 +189,10 @@ a {
     display:inline-flex;
     justify-content: center; /* horizontal axis */
     align-items: center; /* vertical axis */
+}
+
+.icon-container-accent {
+    background: var(--color-accent);
 }
 
 /* ------------------------------------------------------------- */
@@ -214,7 +229,6 @@ a {
     background: #00c8bb;
 }
 
-
 .button--accent {
     background: var(--color-accent);
     color: white;
@@ -224,13 +238,17 @@ a {
     background: #ffa088;
 }
 
+.button--stretched {
+    padding-right: 6rem;
+    padding-left: 6rem;
+}
+
 .button--block {
     border-color: var(--color-headings);
     border: 2px solid var(--color-headings);
     background: none;
     display: inline-block;
     color: #1b0760;
-    width: 100%;
 }
 .button--block:hover{
     background: #1b0760;
@@ -272,12 +290,13 @@ a {
     border: 0;
     flex-grow: 1;
     padding: 1.5rem 1rem;
+    overflow: hidden;
 }
 
 .input-group .button { /* styling only buttons inside input-group */
     margin: 4px;
     width: 160px;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .input-group .icon-container {
@@ -300,9 +319,11 @@ a {
     border-radius: 7px;
     box-shadow: 0 0 20px 10px #f3f3f3;
     overflow:hidden;
+    margin: 2rem;
 }
 
-.card__header, .card__body {
+.card__header, 
+.card__body {
     padding: 2rem 3rem;
 }
 
@@ -314,4 +335,243 @@ a {
 .card--secondary .card__header {
     background-color: var(--color-secondary);
     color: white;
+}
+
+.card--secondary .badge--secondary {
+    background-color: #0fbbda;
+}
+
+/* ------------------------------------------------------------- */
+/* PLANS */
+.plan__name {
+    color: #fff;
+    margin: 0;
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.plan__price {
+    font-size: 6rem;
+}
+
+.plan__price-cycle {
+    font-size: 2.4rem;
+    font-weight: 500;
+    opacity: .8;
+    margin-right: 1rem;
+}
+
+.plan__description {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.plan .list__item {
+    margin-bottom: 2rem;
+  }
+
+.plan--popular .card__header {
+    position: relative;
+  }
+  
+  .plan--popular .card__header::before {
+    content: url(../Mosh/icons/popular.svg);
+    width: 40px;
+    display: inline-block;
+    position: absolute;
+    top: -6px;
+    right: 5%;
+  }
+
+@media screen and (min-width: 1024px) {
+    .plan__name {
+      font-size: 1.4rem;
+    }
+  
+    .plan__price {
+      font-size: 5rem;
+    }
+  
+    .plan__billing-cycle {
+      font-size: 1.6rem;
+    }
+  
+    .plan__description {
+      font-size: 1.7rem;
+    }
+  }
+  
+
+/* ------------------------------------------------------------- */
+/*  MEDIA */
+
+.media {
+    display:flex;
+}
+
+.media__title {
+    margin-top: 0;
+}
+
+.media__body {
+    margin: 0 2rem;
+}
+
+.media__image {
+    margin-top: 1rem;
+}
+
+.quote {
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--color-body-darker);
+    line-height: 1.5;
+}
+
+.quote__text::before {
+    content: open-quote;
+}
+.quote__text::after {
+    content: close-quote;
+}
+
+.quote__icon {
+    position: relative;
+    bottom: 10px;
+}
+
+.quote__author {
+    font-style: normal;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.quote_company {
+    color:var(--color-headings);
+    opacity: .4;
+    font-size: 2rem;
+    font-style: normal;
+
+}
+
+@media screen and (min-width: 1024px) {
+    .quote {
+        font-size: 2rem;
+    }
+
+    .quote__author {
+        font-size: 2.4rem;
+    }
+
+    .quote__company {
+        font-size: 1.6;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* GRIS */
+
+.grid {
+    display: grid;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .grid--cols-2{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .grid--cols-3{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* TESTIMONIALS */
+
+.testimonial {
+    padding: 3rem;
+}
+
+.testimonial__image {
+    position: relative;
+}
+
+.testimonial__image > img { /* direct child selector */
+    width: 100%;
+}
+
+.testimonial__image > .icon-container {
+    position: absolute;
+    top: 3rem;
+    right: -32px;
+    overflow:auto;
+}
+
+.testimonial .grid--cols-2 {
+    justify-items: center;
+}
+
+@media screen and (max-width: 535px) {
+    .testimonial__image > .icon-container {
+    position: absolute;
+    right: 10px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .testimonial .quote,
+    .testimonial .quote__author {
+        font-size: 2.4rem;
+    }
+
+    .testimonial .quote{
+        margin-left: 6rem;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* CALLOUT */
+.callout {
+    padding: 4rem;
+    border-radius: 5px;
+}
+
+.callout--primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.callout__heading {
+    color: #fff;
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+.callout__content {
+    text-align: center;
+}
+
+.callout .button {
+    align-self: center;
+    justify-self: center;
+}
+
+@media screen and (min-width: 768px) {
+    .callout .grid--cols-2 {
+        grid-template-columns: 1fr auto;
+    }
+
+    .callout__content {
+        text-align: left;
+    }
+    .callout .button {
+        align-self: center;
+        justify-self: start;
+        margin: 0 2rem;
+    }
 }
