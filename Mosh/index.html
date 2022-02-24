@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mosh's class</title>
     <!-- FONTs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,35 @@
     <link rel="stylesheet" href="styles.css"/>
     <link rel="stylesheet" href="normalize.css"/>
 </head>
+
 <body>
+    <nav class="nav collapsible">
+        <a class="nav__brand" href="/"><img src="images/logo.svg" alt=""></a> <!-- forward slash on href= is the root of the website -->
+        <svg class="icon icon--white nav__toggler">
+            <use xlink:href="icons/sprite.svg#menu"></use>
+        </svg>
+        <ul class="list nav__list collapsible__content">
+            <li class="nav__item"><a href="#">Hosting</a></li>
+            <li class="nav__item"><a href="#">VPS</a></li>
+            <li class="nav__item"><a href="#">Pricing</a></li>
+            <li class="nav__item"><a href="#">Domain</a></li>
+        </ul>
+    </nav>
+
+    <section class="block block--dark block--skewed-left hero">
+        <div class="container grid grid--cols-2">
+            <header class="block__header hero__content">
+                <h1 class="block__heading">Cloud HOsting</h1>
+                <p class="hero__tagline"> Deploy your websites blalbala. </p>
+                <a href="" class="button button--accent button--stretched">Get started</a>
+            </header>
+            <picture>
+                <source type="image/webp" srcset="/Mosh/images_resize/banner@1xWEBP.webp 1x, /Mosh/images_resize/banner@2xWEBP.webp 2x"/>        
+                <source type="image/png" srcset="/Mosh/images_resize/banner@1x.png 1x, /Mosh/images_resize/banner@2x.png 2x"/>
+                <img class="hero__image"src="images/banner.png" alt=""/>
+            </picture>
+        </div>
+    </section>
 
     <a href="#" class="link-arrow">Learn more</a>
     <span class="badge badge--primary badge--small">10% OFF</span>
@@ -43,29 +71,7 @@
         <button class="button button--accent">Search</button>
     </div>
 
-    <div style="width: 50%"; padding: 4rem> <!-- temporarely -->
-        <div class="plan plan--popular">
-            <div class="card card--secondary">
-                <header class="card__header"> 
-                  <h3 class="plan__name">Card title</h3>
-                  <span class="plan__price">200$</span>  
-                  <span class="plan__price-cycle">/month</span>  
-                  <span class="badge badge--secondary badge--small">10% OFF</span>
-                  <span class="plan__description"> East start on the cloud </span>
-                </header>
-
-                <ul class="list list--tick">
-                    <li class="list__item">Item 1</li>
-                    <li class="list__item">Item 2</li>
-                    <li class="list__item">Item 3</li>
-                    <li class="list__item">Item 4</li>
-                </ul>
-
-                <button class="button button--block">BUY NOW</button>
-            </div>
-        </div>
-    </div>
-
+    
     <div class="media">
         <div class="media__image">
             <svg class="icon icon--primary">
@@ -159,5 +165,70 @@
         </div>
     </div>
 
+    <div class="collapsible collapsible--expanded">
+        <header class="collapsible__header">
+            <h2 class="collapsible__heading">Item 1</h2>
+            <svg class="icon icon--white collapsible__chevron">
+                <use xlink:href="/Mosh/icons/sprite.svg#line"></use>
+            </svg>
+        </header>
+            
+        <div class="collapsible__content">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem tempore autem dolorem quidem. Quae saepe natus, recusandae enim aliquam dolor porro eius! Totam molestiae, cum expedita nostrum molestias at praesentium.
+        </div>
+    </div>
+
+    <section class="block container">
+        <header class="block__header">
+            <h2 class="block__heading">Heading</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel excepturi error, aperiam modi laboriosam sed accusantium quam molestias. Blanditiis aperiam quidem adipisci eveniet fugiat repellendus a ratione fuga impedit animi.
+            </p>
+        </header>
+
+        <div style="width: 50%"; padding: 4rem> <!-- temporarely -->
+            <div class="plan plan--popular">
+                <div class="card card--secondary">
+                    <header class="card__header"> 
+                      <h3 class="plan__name">Card title</h3>
+                      <span class="plan__price">200$</span>  
+                      <span class="plan__price-cycle">/month</span>  
+                      <span class="badge badge--secondary badge--small">10% OFF</span>
+                      <span class="plan__description"> East start on the cloud </span>
+                    </header>
+    
+                    <ul class="list list--tick">
+                        <li class="list__item">Item 1</li>
+                        <li class="list__item">Item 2</li>
+                        <li class="list__item">Item 3</li>
+                        <li class="list__item">Item 4</li>
+                    </ul>
+    
+                    <button class="button button--block">BUY NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block block--dark block--skewed-right">
+        <div class="container">
+            <h2 class="block__heading">Heading</h2>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel excepturi error, aperiam modi laboriosam sed accusantium quam molestias. Blanditiis aperiam quidem adipisci eveniet fugiat repellendus a ratione fuga impedit animi.
+            </p>
+        </div>
+    </section>
+
+    <section class="block block--dark block--skewed-left">
+        <h2 class="block__heading">Heading</h2>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel excepturi error, aperiam modi laboriosam sed accusantium quam molestias. Blanditiis aperiam quidem adipisci eveniet fugiat repellendus a ratione fuga impedit animi.
+        </p>
+    </section>
+
+
+
+    <script src="/Mosh/code/Moshify/js/main.js"></script>
+    </script>
 </body>
 </html>
