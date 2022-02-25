@@ -434,7 +434,7 @@ a {
 }
   
 .plan--popular .card__header::before {
-    content: url(../Projects/icons/popular.svg);
+
     width: 40px;
     display: inline-block;
     position: absolute;
