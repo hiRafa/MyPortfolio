@@ -160,7 +160,6 @@ a {
 .list--tick {
     list-style-image: url(../Mosh/icons/tick.svg);
     padding-left: 6rem;
-    color: var(--color-headings);
 }
 
 .list--tick .list__item {
@@ -217,7 +216,7 @@ a {
     font-size: 2rem;
     font-weight: 600;
     margin: 1rem 0;
-    padding: 2rem 3rem;
+    padding: 2rem 3vw; /* vw calculates percentage based on viewport */
     outline: 0;
     text-align: center;
     text-transform: uppercase;
@@ -311,13 +310,14 @@ a {
 .input-group .input { /* this model is like an if statement (if input is inside of an input-group, border is 0) */
     border: 0;
     flex-grow: 1;
+    width: 0;
     padding: 1.5rem 2rem;
     overflow: hidden;
 }
 
 .input-group .button { /* styling only buttons inside input-group */
     margin: 4px;
-    width: 180px;
+    width: auto;
     overflow: hidden;
 }
 
@@ -332,6 +332,10 @@ a {
 @media screen and (min-width: 1024px){
     .input {
         font-size: 1.5rem;
+    }
+    .input-group .button { 
+        width: 180px;
+        padding: 2rem 1vw;
     }
 }
 
@@ -528,7 +532,7 @@ a {
     }
 
     .quote__company {
-        font-size: 1.6;
+        font-size: 1.6rem;
     }
 }
 
@@ -681,7 +685,6 @@ a {
 .block {
     --padding-vertical: 6rem;
     padding: var(--padding-vertical) 2rem;
-
 }
 
 .block__header {
@@ -809,8 +812,9 @@ a {
 }
 
 .block-domain__prices {
+    color: var(--color-headings);
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 6rem);
     font-size: 2rem;
     font-weight: 600;
@@ -929,6 +933,7 @@ a {
 @media screen and (min-width: 768px){
     .footer_sections {
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        justify-items: center;
     }
 
     .footer .collapsible__chevron {

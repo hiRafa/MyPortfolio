@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mosh's class</title>
+    <title>Moshify - Go Online for Just $9</title>
+    <!-- Extra METAS to help with Search Engines -->
+    <meta name="description" content="Deploy your websites in less than 60 seconds.">
+            <!-- The following metas are when sharing a link on FB (example) it shows title, description and image -->
+    <meta property="og:title" content="Moshify...">
+    <meta property="og:description" content="Moshify...">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://">
+    <meta property="og:url" content="https//moshified.com">
     <!-- FONTs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +20,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css"/>
     <link rel="stylesheet" href="normalize.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 
 <body>
     <nav class="nav collapsible">
@@ -38,7 +48,7 @@
             <picture>
                 <source type="image/webp" srcset="/Mosh/images_resize/banner@1xWEBP.webp 1x, /Mosh/images_resize/banner@2xWEBP.webp 2x"/>        
                 <source type="image/png" srcset="/Mosh/images_resize/banner@1x.png 1x, /Mosh/images_resize/banner@2x.png 2x"/>
-                <img class="hero__image"src="images/banner.png" alt=""/>
+                <img class="hero__image" src="images/banner.png" alt=""/>
             </picture>
         </div>
     </section>
@@ -143,7 +153,7 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, explicabo.</p>
         </header>
         <article class="grid grid--cols-2 feature">
-            <div class="feature__content">
+            <div class="feature__content" data-aos="zoom-in-down">
                 <svg class="icon icon--primary">
                     <use xlink:href="/Mosh/icons/sprite.svg#easy"></use>
                 </svg>
@@ -154,7 +164,7 @@
                 <a href="#" class="link-arrow">Learn More</a>
             </div>
 
-            <picture>
+            <picture data-aos="zoom-out-left">
                 <source
                 type="image/webp"
                 srcset="/Mosh/images_resize/easy@1xWEBP.webp 1x, /Mosh/images_resize/easy@2xWEBP.webp 2x"
@@ -168,7 +178,7 @@
         </article>
 
         <article class="grid grid--cols-2 feature ">
-            <div class="feature__content">
+            <div class="feature__content" data-aos="zoom-in-down">
                 <svg class="icon icon--primary">
                  <use xlink:href="/Mosh/icons/sprite.svg#easy"></use>
                 </svg>
@@ -179,7 +189,7 @@
                 <a href="#" class="link-arrow">Learn More</a>
             </div>
 
-            <picture>
+            <picture data-aos="zoom-out-right">
                     <source
                     type="image/webp"
                     srcset="/Mosh/images_resize/easy@1xWEBP.webp 1x, /Mosh/images_resize/easy@2xWEBP.webp 2x"
@@ -193,7 +203,7 @@
         </article>
 
         <article class="grid grid--cols-2 feature ">
-            <div class="feature__content">
+            <div class="feature__content" data-aos="zoom-in-down">
                 <svg class="icon icon--primary">
                  <use xlink:href="/Mosh/icons/sprite.svg#easy"></use>
                 </svg>
@@ -204,7 +214,7 @@
                 <a href="#" class="link-arrow">Learn More</a>
             </div>
 
-            <picture>
+            <picture data-aos="zoom-out-left">
                     <source
                     type="image/webp"
                     srcset="/Mosh/images_resize/easy@1xWEBP.webp 1x, /Mosh/images_resize/easy@2xWEBP.webp 2x"
@@ -369,12 +379,12 @@
     <footer class="footer block block--dark">
         <div class="container grid footer_sections">
             <section class="collapsible collapsible--expanded footer__section">
-                <header class="collapsible__header">
+                <div class="collapsible__header">
                   <h2 class="collapsible__heading footer__heading">Item 1</h2>
                   <svg class="icon icon--white collapsible__chevron">
                     <use xlink:href="images/sprite.svg#chevron"></use>
                   </svg>
-                </header>
+                </div>
                 <div class="collapsible__content">
                     <ul class="list">
                         <li class="nav__item"><a href="#">Hosting</a></li>
@@ -386,12 +396,12 @@
             </section>
 
             <section class="collapsible footer__section">
-                <header class="collapsible__header">
+                <div class="collapsible__header">
                   <h2 class="collapsible__heading footer__heading">Item 2</h2>
                   <svg class="icon icon--white collapsible__chevron">
                     <use xlink:href="icons/search.svg"></use>
                   </svg>
-                </header>
+                </div>
                 <div class="collapsible__content">
                     <ul class="list">
                         <li class="nav__item"><a href="#">Hosting</a></li>
@@ -403,12 +413,12 @@
             </section>
 
             <section class="collapsible footer__section">
-                <header class="collapsible__header">
+                <div class="collapsible__header">
                   <h2 class="collapsible__heading footer__heading">Item 3</h2>
                   <svg class="icon icon--white collapsible__chevron">
                     <use xlink:href="images/sprite.svg#chevron"></use>
                   </svg>
-                </header>
+                </div>
                 <div class="collapsible__content">
                     <ul class="list">
                         <li class="nav__item"><a href="#">Hosting</a></li>
@@ -420,12 +430,12 @@
             </section>
 
             <section class="collapsible footer__section">
-                <header class="collapsible__header">
+                <div class="collapsible__header">
                   <h2 class="collapsible__heading footer__heading">Item 3</h2>
                   <svg class="icon icon--white collapsible__chevron">
                     <use xlink:href="images/sprite.svg#chevron"></use>
                   </svg>
-                </header>
+                </div>
                 <div class="collapsible__content">
                     <ul class="list">
                         <li class="nav__item"><a href="#">Hosting</a></li>
@@ -436,15 +446,18 @@
                 </div>
             </section>
 
-            <section class="footer__brand">
+            <div class="footer__brand">
                 <img src="images/logo.svg" alt="">
                 <p class="footer__copyright">Copyright blbabla</p>
-            </section>
+            </div>
         </div>    
     </footer>
 
 
     <script src="/Mosh/code/Moshify/js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
 </body>
 </html>
