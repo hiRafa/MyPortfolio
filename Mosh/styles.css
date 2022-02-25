@@ -14,13 +14,18 @@
 }
 
 /*LAYOUT*/
-.container {
+.container1140 {
     max-width: 1140px;
     margin: 0 auto;
 }
 
 /* ------------------------------------------------------------- */
 /* Typography */
+::selection {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
 html {
     /* 62.5% of 16px = 10px */
     font-size: 62.5%;
@@ -49,6 +54,7 @@ h2 {
 
 h3 {
     font-size: 3rem;
+    font-weight: 500;
 }
 
 p {
@@ -143,7 +149,6 @@ a {
 .list {
     list-style: none;
     padding-left: 0;
-    color: var(--color-headings);
 }
 
 /* horizontal lists */
@@ -154,7 +159,8 @@ a {
 
 .list--tick {
     list-style-image: url(../Mosh/icons/tick.svg);
-    padding-left: 3rem;
+    padding-left: 6rem;
+    color: var(--color-headings);
 }
 
 .list--tick .list__item {
@@ -206,15 +212,23 @@ a {
 /* BUTTONS */
 .button {
     border-radius: 50px;
-    border: none;
+    border: 0;
     cursor: pointer;
     font-size: 2rem;
     font-weight: 600;
     margin: 1rem 0;
     padding: 2rem 3rem;
+    outline: 0;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
+}
+
+.button .icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    vertical-align: middle;
 }
 
 .button--primary {
@@ -254,8 +268,9 @@ a {
     border-color: var(--color-headings);
     border: 2px solid var(--color-headings);
     background: none;
-    display: inline-block;
     color: #1b0760;
+    display: inline-block;
+    width: 100%;
 }
 .button--block:hover{
     background: #1b0760;
@@ -296,13 +311,13 @@ a {
 .input-group .input { /* this model is like an if statement (if input is inside of an input-group, border is 0) */
     border: 0;
     flex-grow: 1;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2rem;
     overflow: hidden;
 }
 
 .input-group .button { /* styling only buttons inside input-group */
     margin: 4px;
-    width: 160px;
+    width: 180px;
     overflow: hidden;
 }
 
@@ -326,12 +341,27 @@ a {
     border-radius: 7px;
     box-shadow: 0 0 20px 10px #f3f3f3;
     overflow:hidden;
-    margin: 2rem;
+    height: 100%;
 }
 
-.card__header, 
+.card__header,
 .card__body {
     padding: 2rem 3rem;
+}
+
+.card__container{
+    height: 550px;
+}
+
+.card .card__body {
+    display: flex;
+    flex-flow: column;
+    flex-direction: column;
+    
+}
+
+.card .button {
+    margin: auto;
 }
 
 .card--primary .card__header {
@@ -348,8 +378,19 @@ a {
     background-color: #0fbbda;
 }
 
+.card--primary .badge--primary {
+    background-color: #0060df;
+}
+
+
+
 /* ------------------------------------------------------------- */
 /* PLANS */
+.plan {
+    transition: transform 0.2s ease-out;
+
+}
+
 .plan__name {
     color: #fff;
     margin: 0;
@@ -363,7 +404,7 @@ a {
 
 .plan__price-cycle {
     font-size: 2.4rem;
-    font-weight: 500;
+    font-weight: 300;
     opacity: .8;
     margin-right: 1rem;
 }
@@ -377,20 +418,33 @@ a {
 
 .plan .list__item {
     margin-bottom: 2rem;
-  }
+}
+
+.plan--popular {
+    transform: scale(1.1);
+}
+  
 
 .plan--popular .card__header {
     position: relative;
-  }
+}
   
-  .plan--popular .card__header::before {
+.plan--popular .card__header::before {
     content: url(../Mosh/icons/popular.svg);
     width: 40px;
     display: inline-block;
     position: absolute;
     top: -6px;
     right: 5%;
-  }
+}
+
+.plan:hover {
+    transform: scale(1.05);
+}
+  
+.plan--popular:hover {
+    transform: scale(1.15);
+}
 
 @media screen and (min-width: 1024px) {
     .plan__name {
@@ -416,6 +470,7 @@ a {
 
 .media {
     display:flex;
+    margin-bottom: 4rem;
 }
 
 .media__title {
@@ -631,6 +686,7 @@ a {
 
 .block__header {
     text-align: center;
+    margin-bottom: 4rem;
 }
 
 .block__heading {
@@ -642,17 +698,19 @@ a {
     color: grey;
 }
 
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
     color: white;
 }
 
 .block--skewed-right {
-    clip-path: polygon(49% 0%, 1% 32%, 22% 100%, 100% 13%);
+    clip-path: polygon(0% 0%, 0% 90%, 100% 100%, 100% 0%);
     padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 
 .block--skewed-left {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
     padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 
@@ -720,10 +778,6 @@ a {
 /* ------------------------------------------------------------- */
 /* BANNER HERO */
 
-.hero {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
-
 .hero__tagline {
     font-size: 2rem;
     color: #b9c3cf;
@@ -742,5 +796,164 @@ a {
     .hero__content {
         text-align: left;
         align-self: center;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* BLOCK DOMAIN */
+.block .input-group{ 
+    box-shadow: 0 0 30px 20px #f3f3f3;
+    border: 0;
+    max-width: 650px;
+    margin: 4rem auto;
+}
+
+.block-domain__prices {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 6rem);
+    font-size: 2rem;
+    font-weight: 600;
+    justify-items: center;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 768px){
+    .block-domain__prices {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+/* PLANS BLOCK */
+.block-plans .grid {
+    gap: 8rem 4rem;
+}
+
+.block-plans .card {
+    max-width: 500px;
+    margin:0 auto;
+}
+
+/* ------------------------------------------------------------- */
+/* FEATURES */
+
+.feature {
+    gap: 4rem 2rem;
+    margin: 12rem;
+}
+
+.feature:first-of-type { /*applying 6rem to the first article only*/
+    margin-top: 6rem;
+}
+
+.feature__heading {
+    margin: 1rem 0;
+}
+
+.feature__image {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .feature:nth-of-type(even) .feature__content {
+        order: 2;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* SHOWCASE */
+.block-showcase__image > img {
+    width: 100%; 
+}
+
+@media screen and (min-width: 768px){
+    .block-showcase .grid {
+        grid-template-columns: 50% 50%; /* problem about 1fr is that the width of the container would be defined by the width of the image */
+    }
+    .block-showcase__image {
+
+        justify-self: end;
+    }
+    .block-showcase__image > img {
+        width: auto;
+        max-width: 700px;
+    }
+}
+/* FOOTER */
+.footer {
+    height: 655px;
+}
+
+.footer a {
+    color: #777;
+    transition: color .2s;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer__section {
+    padding: 2rem;
+    border-bottom: 1px solid #393939;
+}
+
+.footer__section .list {
+    margin:0 ;
+}
+
+.footer__heading {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.footer__brand {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.footer__brand img {
+    /* TODO: consider applying to all img */
+    width: 100%;
+    max-width: 230px;
+}
+
+.footer__copyright {
+    font-size: 2.1rem;
+    color: #fff;
+    opacity: .3;
+}
+
+@media screen and (min-width: 768px){
+    .footer_sections {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+
+    .footer .collapsible__chevron {
+        display: none;
+    }
+
+    .footer .collapsible__content {
+        opacity: 1;
+        max-height: 100%;
+    }
+
+    .footer__brand {
+        order: -1;
+        margin-top: 1rem;
+    }
+
+    .copyright {
+        font-size: 1.5rem;
+    }
+
+    .footer__section {
+        border: 0;
+    }
+
+    .footer__heading {
+        font-size: 3rem;
     }
 }
